@@ -1,0 +1,6 @@
+###install pyenv in ubuntu
+
+$ curl https://pyenv.run | bash
+$ sudo apt install curl -y 
+$ sudo apt install git -y
+$ export PATH="$HOME/.pyenv/bin:$PATH" && eval "$(pyenv init --path)" && echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n eval "$(pyenv init -)"\nfi' >> ~/.bashrc

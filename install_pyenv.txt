@@ -4,3 +4,39 @@ $ curl https://pyenv.run | bash
 $ sudo apt install curl -y 
 $ sudo apt install git -y
 $ export PATH="$HOME/.pyenv/bin:$PATH" && eval "$(pyenv init --path)" && echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n eval "$(pyenv init -)"\nfi' >> ~/.bashrc
+
+
+###Install pyenv in mac
+brew install pyenv
+echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nfi' >> ~/.bash_profile
+
+echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nfi' >> ~/.zprofile
+exec "$SHELL"
+
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+###Ad hoc notes
+####Work flow for console-driven network automation
+1. Run inventory
+2. Run password of last resort compliance
+3. Run ACL update with optional rollback for failed device, only run on passed complianced
+    Device type
+        -IOS
+        -IOS-XE
+        -NXOS
+    - CTC
+        AP
+        EMEA
+        US
+4. Run ACL update report
+
+Optional:
+-backup config
+-run intent
+-update SNMP
+-update QoS
+-update interface
+-update routing
+-configure telemetry

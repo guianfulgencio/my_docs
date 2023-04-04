@@ -40,3 +40,20 @@ Optional:
 -update interface
 -update routing
 -configure telemetry
+
+#####
+ACL 20 updates
+
+sh run | sec username|secret|password
+service password-encryption
+enable secret 9 $9$Tr.fJkiWqTDLNE$uZnlmaQm7TjDezx3X59P.rZBh3diBR6z41Op8/igj5g
+username admin secret 9 $9$.E8i4elg0kVv5U$mhwRPfT6.rIGwYtLKaL2PLkajzxH2s7rBcSPDPiureM
+ password 7 032E0B12035A31020F0700044932
+ password 7 032E0B12035A31020F0700044932
+ password 7 032E0B12035A31020F0700044932
+ 
+ sh run | sec access-list standard 20
+ ip access-list standard 20
+ 10 permit 139.65.136.0 0.0.3.255
+ 20 permit 139.65.140.0 0.0.3.255
+ 30 deny   any log

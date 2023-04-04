@@ -1,0 +1,36 @@
+conf t
+int GigabitEthernet0/0
+ip add dhcp
+no shut
+
+conf t
+hostname csr1kv2
+ip domain-name domain.local
+crypto key generate rsa
+ip ssh version 2
+line vty 0 15
+transport input ssh
+login local
+username cisco priv 15 password cisco
+
+
+
+conf t
+hostname csr1kv1
+ip domain-name domain.local
+crypto key generate rsa
+ip ssh version 2
+line vty 0 15
+transport input ssh
+login local
+username cisco priv 15 password cisco
+
+conf t
+hostname csr1kv3
+ip domain-name domain.local
+crypto key generate rsa
+ip ssh version 2
+line vty 0 15
+transport input ssh
+login local
+username cisco priv 15 password cisco
